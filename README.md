@@ -22,4 +22,7 @@ This project is a website that allows users to search for cafes, make reservatio
 - **Interaction with Cafes**: Users can like, follow, or unfollow cafes.
 - **Password Security**: Password hashing and salt generation are used during user account creation.
 - **Email Confirmation**: Users receive a confirmation email upon successful reservation via the SMTP protocol.
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+## Database Model (ERD diagram)
+
+![alt text](https://github.com/nazaninSgh/Cafe-Reservation-Website/blob/main/database_model.jpg)
