@@ -1,9 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+    font-family: BK;
+    src: url('../../fonts/BK.ttf') format('truetype')
+}
 body{
-    /* background: linear-gradient(to right,#8F8069 0%,#6C5028 100%); */
-    font-family: 'Open Sans', sans-serif;
-    
+    font-family: "BK", cursive;
 }
 
 .profile-container{
@@ -104,29 +106,29 @@ body{
     padding: 20px 0 0;
      
 } 
-i{
-    padding-left: 20px;
-    float: left;
 
-}
 .post{
-  
  width: 800px;
 }
 .post img{
-   width: 500px;
-    height: 400px;
-    padding: 20px;
+   width: 350px;
+    height: 350px;
+    padding-left: 20px;
 
-    
+}
+.likeBtn{
+    background: none;
+    color: rgba(255,97,9,0.88);
+    font-size: 30px;
+    overflow: hidden;
+    border: none;
 }
 .desc{
-    padding: 15px;
-    text-align: center;
+    padding-left: 15px;
 }
 
 .row {
-    
+
     display: flex;
     width: 250%;
   }

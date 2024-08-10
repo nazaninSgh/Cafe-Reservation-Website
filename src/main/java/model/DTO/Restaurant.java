@@ -1,26 +1,23 @@
 package model.DTO;
 
+import java.util.ArrayList;
+
 /**
  * Created by nazanin on 3/30/2019.
  */
 public class Restaurant {
     private int id;
+    private int capacity;
     private String name;
     private String address;
     private String email;
     private String description;
+    private ArrayList<CafeImage> image;
 
     public Restaurant(){
 
     }
 
-    public Restaurant(int id, String name, String address, String email, String description) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.email = email;
-        this.description = description;
-    }
 
     public int getId() {
         return id;
@@ -60,5 +57,21 @@ public class Restaurant {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ArrayList<CafeImage> getImage() {
+        return image;
+    }
+
+    public void setImage(ArrayList<CafeImage> image) {
+        this.image = image;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }

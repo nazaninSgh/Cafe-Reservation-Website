@@ -11,7 +11,11 @@
     <title>login</title>
   </head>
   <body>
+  <%
+      response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+  %>
   <div class="container">
+      <div class="col-sm-4"></div>
       <div class="col-sm-4 col-md-4 col-lg-4 text-center">
           <div class="form-wrap">
               <%
@@ -24,21 +28,23 @@
                   }
               %>
               <div class="logo">
-                  <h1>Login</h1>
+                  <h1>ورود</h1>
               </div>
               <br><br>
               <form action="login" method="post">
                   <div class="form-group">
                       <i class="fa fa-envelope"></i>
-                      <input type="email" name="email" class="form-control" placeholder="email">
+                      <input type="email" name="email" class="form-control" placeholder="ایمیل">
                   </div>
                   <div class="form-group">
                       <i class="fa fa-lock"></i>
-                      <input type="password" name="pass" class="form-control" placeholder="password">
+                      <input type="password" name="pass" class="form-control" placeholder="رمزعبور">
                   </div>
-                  <button class="btn" type="submit">login</button>
+                  <button class="btn" type="submit">ورود</button>
               </form>
-              <a href="signup.jsp">no account yet?click here</a>
+              <a href="signup.jsp">رمز عبورم را فراموش کرده ام</a>
+              <br><br>
+              <a href="signup.jsp">حساب کاربری ندارید؟کلیک کنید</a>
           </div>
       </div>
   </div>

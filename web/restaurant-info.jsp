@@ -57,7 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <i class="fa fa-pencil"></i>
-                                <textarea rows="4" cols="50" name="description" class="form-control" placeholder="توضیحات کافه"></textarea>
+                                <textarea style="color: black" rows="4" cols="50" name="description" class="form-control" placeholder="توضیحات کافه"></textarea>
                                 <%--<input type="password" name="pass" class="form-control" placeholder="password">--%>
                             </div>
                             <div class="form-group">

@@ -1,13 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page import="model.DTO.Restaurant" %>
 <%@ page import="model.DAO.UserDAO" %>
-<%@ page import="model.DTO.User" %>
 <%@ page import="model.DAO.ReviewDAO" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="model.DTO.Review" %>
 <%@ page import="model.DAO.MenuDAO" %>
-<%@ page import="model.DTO.MenuItem" %>
+<%@ page import="model.DTO.*" %>
+<%@ page import="model.DAO.ReplyDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <style>
     .checked{
@@ -35,20 +33,40 @@
         body{
             font-family: "BK", cursive;
         }
+        div.box{
+            margin: 2px 30px 2px 2px;
+            border:1px solid saddlebrown;padding:8px;background-color: rgba(135, 68, 0, 0.05)
+        }
     </style>
-<body>
-<%
+        <%
     response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
-    Restaurant restaurant = (Restaurant) request.getAttribute("restaurant");
+    int usid=0;
+   // Restaurant restaurant = (Restaurant) request.getAttribute("restaurant");
+    Restaurant restaurant = (Restaurant) session.getAttribute("restaurant");
     ReviewDAO dao = new ReviewDAO();
     ArrayList<Review> reviews = dao.getCafeReviews(Integer.parseInt(request.getParameter("id")));
+    //ArrayList<Review> reviews = dao.getCafeReviews(restaurant.getId());
     UserDAO userDAO = new UserDAO();
+    if (session.getAttribute("customer_id")!=null){
+        User user = userDAO.getUserById((Integer) session.getAttribute("customer_id"));
+        usid = user.getId();
+    }
     int rate = dao.getRate(restaurant.getId());
     MenuDAO menuDAO = new MenuDAO();
     ArrayList<MenuItem> menuItems = menuDAO.selectItems(restaurant.getId());
+    ArrayList<Reply> replies = new ArrayList<>();
+    ReplyDAO replyDAO = new ReplyDAO();
 
 %>
 
+
+</head>
+<body>
+<script>
+    function goto() {
+        window.location.href = "index.jsp";
+    }
+</script>
 <nav class="navbar navbar-default navbar-fixed-top probootstrap-navbar">
     <div class="container">
         <div class="navbar-header">
@@ -62,25 +80,26 @@
 
         <div id="navbar-collapse" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="" ><b>Follow</b></a> </li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right" style="font-size: 22px">
-                <li><a href="#contact" data-nav-section="contact">تماس با ما</a></li>
+                <li><a style="" onclick="goto()">صفحه اصلی</a></li>
+                <li><a href="#contact" data-nav-section="contact">ارتباط با ما</a></li>
                 <li><a href="#reservation" data-nav-section="reservation">رزرو</a></li>
                 <li><a href="#review" data-nav-section="review">نظرات</a></li>
                 <li><a href="#menu" data-nav-section="menu">منو</a></li>
-                <li><a href="#welcome" data-nav-section="welcome">کافه</a></li>
+                <li><a href="#welcome" data-nav-section="welcome">درباره کافه</a></li>
             </ul>
         </div>
         <%
             for (int i = 0; i <rate ; i++) {
         %>
-            <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
         <%
             }
             for (int i = 0; i <(5-rate) ; i++) {
         %>
-            <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
         <%
             }
         %>
@@ -89,7 +108,7 @@
 
 <section id="welcome" class="flexslider" data-section="welcome" style="height: 100vh">
     <ul class="slides" style="height: 100vh">
-    <%
+        <%
             for (int i = 0; i <restaurant.getImage().size() ; i++) {
         %>
         <li class="overlay" data-stellar-background-ratio="0.5" style="height: 100vh">
@@ -158,7 +177,7 @@
         </div>
     </div>
 </section>
-<div id="review" class="card shadow-none" data-aos="fade" style="direction: rtl;padding: 10px;padding-bottom: 250px;background-color: rgba(180,102,19,0.77)">
+<div id="review" class="card shadow-none" data-aos="fade" style="direction: rtl;padding: 10px;padding-bottom: 750px;background-color: rgba(180,102,19,0.77)">
     <div class="card-header">
         <h3 style="margin-right: 40px;font-family: BK">نظرات</h3>
     </div>
@@ -179,7 +198,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <strong><p><a href="userProf.jsp?id="<%= user.getId()%>><%= user.getName()%>&nbsp;<%=user.getLastname()%></a></strong>&nbsp;<br><%= review.getComment()%> <br>
-                                            <small class="text-muted"><%= review.getDate()%></small></p>
+                                        <small class="text-muted"><%= review.getDate()%></small></p>
+
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +210,7 @@
             <%
                 }
             %>
-        </ul><button class="btn btn-light" type="button" style="margin-right: 40px;margin-top:-9px;"><a href="review.jsp?id=${restaurant.getId()}">نظر بدهید</a></button></div>
+        </ul><button class="btn btn-light" type="button" style="margin-right: 40px;margin-top:-9px;"><a href="review.jsp?id=${restaurant.getId()}">نظر دهید</a></button></div>
 </div>
 
 <section id="reservation" class="probootstrap-section probootstrap-bg-white">
@@ -202,6 +222,15 @@
                 %>
                 <div class="btn-danger" style="text-align: center;direction: rtl;padding: 10px;font-size: 18px">
                     <%= request.getAttribute("error")%>
+                </div>
+                <%
+                    }
+                %>
+                <%
+                    if (request.getAttribute("crushed") != null){
+                %>
+                <div class="btn-success" style="text-align: center;direction: rtl;padding: 10px;font-size: 18px">
+                    <%= request.getAttribute("crushed")%>
                 </div>
                 <%
                     }

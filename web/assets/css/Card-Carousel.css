@@ -8,6 +8,7 @@
   padding: 0 40px 30px 40px;
 }
 
+
 @media (min-width: 768px) {
   .carousel-inner .active, .carousel-inner .active + .carousel-item, .carousel-inner .active + .carousel-item + .carousel-item, .carousel-inner .active + .carousel-item + .carousel-item + .carousel-item {
     display: block;

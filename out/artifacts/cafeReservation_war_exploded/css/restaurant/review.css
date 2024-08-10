@@ -1,0 +1,141 @@
+
+@font-face {
+    font-family: BK;
+    src: url('../../fonts/BK.ttf') format('truetype')
+}
+body{
+    font-family: "BK", cursive;
+    background-color: rgba(221, 83, 83, 0.05);
+
+}
+.cafe-name{
+    width: 100%;
+    text-align: right;
+    float: right;
+    direction: rtl;
+    padding: 20px;
+    text-shadow: 3px 3px 3px #967359;
+    box-shadow: 2px 2px 3px #ccb096;
+    background-color: rgb(255, 219, 198);
+    color: saddlebrown;
+    margin-bottom: 20px;
+}
+.cafe-name h1{
+    margin-right: 50px;
+}
+.q{
+    direction: rtl;
+    float: none;
+    text-align: right;
+    font-size: 20px;
+}
+
+.review{
+    margin-top: 50px;
+    padding: 50px 50px 50px 50px;
+}
+.comment{
+    direction: rtl;
+    width: 100%;
+}
+.comment input{
+    padding: 40px;
+    max-width: 100%;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow:0px 1px 1px 1px #ccb096;
+    outline: none;
+    width: 500px;
+}
+.occasion {
+    display:inline-block;
+    direction: rtl;
+    float: right;
+    right: 0;
+    text-align: right;
+    position: relative;
+    padding-left: 30px;
+    margin: 15px 15px 15px;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.occasion input {
+    position: absolute;
+    float: right;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #dfdfdf;
+    border-radius: 50%;
+}
+
+.occasion:hover input ~ .checkmark {
+    background-color: #a9a9a9;
+}
+
+.occasion input:checked ~ .checkmark {
+    background-color: saddlebrown;
+}
+.ql{
+    text-align: center;
+    float: right;
+    padding: 100px 30px 10px;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 18px;
+    background-color: #dfdfdf;
+}
+.ql input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.ql:hover{
+    background-color: #c88867;
+}
+.select-pl{
+    background: #f48308;
+}
+.select-ql {
+    background: #f48308;
+}
+
+img{
+    width: 70px;
+    height: 70px;
+    transform: translate(20%,-100%);
+}
+.fas{
+    font-size: 50px;
+    transform: translate(30%,-100%);
+}
+
+.btn{
+    max-width: 100%;
+    float: right;
+    width: 100px;
+    box-shadow: 2px 2px 3px #ccb096;
+    background-color: #c88867;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+.btn:hover{
+    color: white;
+    background-color: #93010d;
+}
+

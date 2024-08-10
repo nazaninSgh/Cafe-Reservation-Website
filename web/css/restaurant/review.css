@@ -1,11 +1,10 @@
 
 @font-face {
-    font-family: B yekan;
-    src: url('../../fonts/BYekan.ttf') format('truetype')
+    font-family: BK;
+    src: url('../../fonts/BK.ttf') format('truetype')
 }
 body{
-    font-family: "B yekan", cursive;
-    /*background-color: rgba(145, 1, 10, 0.03);*/
+    font-family: "BK", cursive;
     background-color: rgba(221, 83, 83, 0.05);
 
 }
@@ -18,7 +17,6 @@ body{
     text-shadow: 3px 3px 3px #967359;
     box-shadow: 2px 2px 3px #ccb096;
     background-color: rgb(255, 219, 198);
-    /*background-color: rgb(255, 220, 200);*/
     color: saddlebrown;
     margin-bottom: 20px;
 }
@@ -29,7 +27,7 @@ body{
     direction: rtl;
     float: none;
     text-align: right;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .review{
@@ -47,6 +45,7 @@ body{
     border: none;
     border-radius: 5px;
     box-shadow:0px 1px 1px 1px #ccb096;
+    outline: none;
     width: 500px;
 }
 .occasion {
@@ -97,6 +96,7 @@ body{
     padding: 100px 30px 10px;
     border-radius: 5px;
     margin: 20px;
+    font-size: 18px;
     background-color: #dfdfdf;
 }
 .ql input{

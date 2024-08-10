@@ -24,7 +24,7 @@ public class LoginFilter implements Filter {
         HttpSession session = request.getSession(false);
 
         HttpSession reservationSession = request.getSession();
-
+        int cafeId = Integer.parseInt(request.getParameter("id"));
         int numOfPeople= Integer.parseInt(request.getParameter("people"));
         String date=request.getParameter("date");
 
@@ -33,10 +33,11 @@ public class LoginFilter implements Filter {
         reservation.setDate(date);
         reservation.setNumOfPeople(numOfPeople);
 
-        reservation.setCafeId(1);
+        reservation.setCafeId(cafeId);
         reservationSession.setAttribute("reservation",reservation);
 
         if (session == null || session.getAttribute("customer_id") == null) {
+            //request.setAttribute("reserve","true");
             request.getRequestDispatcher("login.jsp").forward(request,response);
         } else {
             chain.doFilter(req, resp);

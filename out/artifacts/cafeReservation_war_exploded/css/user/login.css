@@ -1,0 +1,57 @@
+@font-face {
+    font-family: BK;
+    src: url('../../fonts/BK.ttf') format('truetype')
+}
+body{
+    font-family: "BK", cursive;
+    background-image: url("../../img/back.jpg");
+    background-size:cover;
+    width: 300px;
+    height: 300px;
+}
+h1{
+    text-shadow: 3px 3px 3px #306180;
+    font-size: 380%;
+    color: white;
+}
+.logo{
+    margin-top: -110px;
+}
+.form-wrap{
+    margin-top: 30%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    padding: 50px 30px 30px 30px;
+    box-shadow: 1px 1px 3px 3px white;
+}
+
+.form-group input{
+    border-radius: 5px;
+    background: none;
+    color: white;
+    padding-right: 30px;
+    border-color: white;
+    text-align: right;
+    direction: rtl;
+}
+i{
+    color: rgba(221, 213, 202, 0.82);
+    position: absolute;
+    margin-top: 10px;
+    float: right;
+    right: 55px;
+}
+a{
+    color: white;
+    margin-bottom: 10px;
+}
+.btn{
+    width: 100%;
+    background-color: rgb(180, 102, 19);
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+.btn:hover{
+    background-color: #FFA33E;
+}

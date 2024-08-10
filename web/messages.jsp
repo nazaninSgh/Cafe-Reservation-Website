@@ -38,7 +38,7 @@
             <li><a href="best-of-cafe.jsp">بالاترین امتیازها<i class="fas fa-star"></i></a></li>
             <li><a href="restaurant-info.jsp">افزودن کافه<i class="fas fa-plus"></i></a></li>
             <li><a href="menu.jsp">منوها<i class="fas fa-list"></i></a></li>
-            <li><a href="inbox.jsp">پیام ها<i class="fas fa-envelope"></i></a></li>
+            <li><a href="send-message.jsp">پیام ها<i class="fas fa-envelope"></i></a></li>
             <li><a href="#">نوشتن پیام<i class="far fa-edit"></i></a></li>
             <li><a href="#">تنظیمات<i class="fas fa-tools"></i></a></li>
             <li><a href="#">کاربران<i class="fas fa-user"></i></a></li>

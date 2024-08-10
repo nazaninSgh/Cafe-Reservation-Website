@@ -1,14 +1,18 @@
 package model.DTO;
 
-/**
- * Created by HP on 1/31/2019.
- */
+
 public class User {
+    private int id;
     private String name;
     private String lastname;
     private String password;
     private String email;
     private String salt;
+    private String imagePath;
+    private String imageName;
+
+    private String bio;
+
 
     public User(){
 
@@ -18,6 +22,14 @@ public class User {
         this.lastname = lastname;
         this.password = password;
         this.email = email;
+    }
+
+    public User(String name, String lastname, String password, String email, String bio) {
+        this.name = name;
+        this.lastname = lastname;
+        this.password = password;
+        this.email = email;
+        if(bio!=null)this.bio = bio;else this.bio=" ";
     }
 
     public String getName() {
@@ -59,4 +71,34 @@ public class User {
     public void setSalt(String salt) {
         this.salt = salt;
     }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getBio() {return bio;}
+
+    public void setBio(String bio) {this.bio = bio;}
+
+
 }

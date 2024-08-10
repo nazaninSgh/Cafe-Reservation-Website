@@ -25,5 +25,6 @@ public class MessageServlet extends HttpServlet {
         String sub = "نتایج بررسی";
 
         Mailer.sendEmail(MailCredentials.from,MailCredentials.username,MailCredentials.pass,to,sub,msg);
+        response.sendRedirect("/messagePRG");
     }
 }

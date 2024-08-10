@@ -22,7 +22,8 @@ public class ReservationDAO {
         }
     }
 
-    public void insertReservation(Reservation reservation){
+    public int insertReservation(Reservation reservation){
+        int row=-1;
         try {
             PreparedStatement statement=connection.prepareStatement
                     ("INSERT INTO reservations (customer_id,cafe_id,num_of_people,date)  VALUES (?,?,?,?)");
@@ -30,11 +31,13 @@ public class ReservationDAO {
             statement.setInt(2,reservation.getCafeId());
             statement.setInt(3,reservation.getNumOfPeople());
             statement.setString(4,reservation.getDate());
-            statement.execute();
+            row = statement.executeUpdate();
+          //  row = statement.execute();
         } catch (SQLException e) {
             System.out.println("not inserted");
             e.printStackTrace();
         }
+        return row;
     }
     public boolean alreadyReserved(String date,int cafe_id){
         try {

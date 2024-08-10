@@ -49,6 +49,7 @@ public class ReviewServlet extends HttpServlet {
         review.setDate(df.format(calendar));
         ReviewDAO dao = new ReviewDAO();
         dao.insertReview(review);
+        response.sendRedirect("restaurant-profile?id="+cafe_id);
 
     }
 }

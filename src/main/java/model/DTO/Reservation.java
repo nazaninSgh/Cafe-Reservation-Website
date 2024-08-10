@@ -7,6 +7,7 @@ public class Reservation {
 
     private int id;
     private int customerId;
+    private int cafeId;
     private String date;
     private int numOfPeople;
 
@@ -51,5 +52,13 @@ public class Reservation {
 
     public void setNumOfPeople(int numOfPeople) {
         this.numOfPeople = numOfPeople;
+    }
+
+    public int getCafeId() {
+        return cafeId;
+    }
+
+    public void setCafeId(int cafeId) {
+        this.cafeId = cafeId;
     }
 }

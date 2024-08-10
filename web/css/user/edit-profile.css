@@ -1,0 +1,68 @@
+@font-face {
+    font-family: BK;
+    src: url('../../fonts/BK.ttf') format('truetype')
+}
+body{
+    font-family: "BK", cursive;
+    background: rgba(238, 230, 219, 0.45);
+}
+
+.profile-container{
+    background: #EBE3D8;
+    height: 100%;
+    box-shadow: 1px 1px 3px 3px #ebd5e2;
+}
+.profile-img{
+
+    margin-top: 20px;
+    max-width:200px;
+    height: 200px;
+    border-radius: 50%;
+
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    padding: 10px;
+    background: none;
+    color: rgba(0, 0, 0, 0.65);
+    display: inline-block;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+
+}
+
+.form-control{
+    background: none;
+    direction: rtl;
+    text-align: right;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.35);
+}
+
+.btn{
+    background-color:rgba(0, 0, 0, 0.35);
+    /*color: rgba(0, 0, 0, 0.65);*/
+    position: absolute;
+    padding-right: 20%;
+    padding-left: 20%;
+    left: 25%;
+
+}
+
+
+

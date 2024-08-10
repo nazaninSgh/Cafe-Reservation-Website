@@ -24,28 +24,28 @@
 }
 
 .swiper-slide {
-  background-image: url(slide1.jpg;
+  background-image: url(slide1.jpg);
 }
 
 .swiper-slide {
-  background-image: url(slide2.jpg;
+  background-image: url(slide2.jpg);
 }
 
 #slides {
-  background-image: url(slide1.jpg;
+  background-image: url(slide1.jpg);
 }
 
 #slides {
 }
 
 #slide1 {
-  background-image: url(slide2.jpg;
+  background-image: url(slide2.jpg);
 }
 
 #promo {
   text-align: center;
   padding: 40px;
-  background-image: url(context.jpg;
+  background-image: url(context.jpg);
   background-size: cover;
 }
 

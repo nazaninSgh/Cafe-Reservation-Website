@@ -28,7 +28,15 @@ public class LoginServlet extends HttpServlet {
             int customer_id = dao.getCustomerId(email);
             HttpSession session=request.getSession();
             session.setAttribute("customer_id",customer_id);
-            request.getRequestDispatcher("/reservation").forward(request,response);
+            request.setAttribute("email",email);
+            if (request.getAttribute("reserve") == null){
+              //  request.getRequestDispatcher("userProf.jsp").forward(request,response);
+                response.sendRedirect("userProf.jsp");
+            }
+            else {
+              //  request.getRequestDispatcher("/reservation").forward(request,response);
+                response.sendRedirect("/reservation");
+            }
         }
         else {
 
